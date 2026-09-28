@@ -9,6 +9,7 @@ kotlin {
         binaries.framework {
             baseName = "Shared"
             isStatic = true
+            binaryOption("bundleId", "com.compose.nutrisportapp.shared")
         }
     }
 
