@@ -1,6 +1,8 @@
 rootProject.name = "NutriSportApp"
 
 pluginManagement {
+    includeBuild("build-logic")
+
     repositories {
         google {
             mavenContent {
@@ -27,5 +29,8 @@ dependencyResolutionManagement {
     }
 }
 
+include(":feature:auth")
+include(":core:designsystem")
+include(":navigation")
 include(":androidApp")
 include(":shared")
