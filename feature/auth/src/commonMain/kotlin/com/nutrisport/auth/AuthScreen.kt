@@ -13,13 +13,17 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.dp
 import com.compose.nutrisportapp.Alpha
 import com.compose.nutrisportapp.BebasNeueFont
 import com.compose.nutrisportapp.FontSize
+import com.compose.nutrisportapp.NutriSportPreview
+import com.compose.nutrisportapp.PreviewLayout
 import com.compose.nutrisportapp.TextPrimary
 import com.compose.nutrisportapp.TextSecondary
 import com.nutrisport.auth.component.GoogleButton
 import rememberMessageBarState
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
 fun AuthScreen() {
@@ -33,7 +37,7 @@ fun AuthScreen() {
             messageBarState = messageBarState,
             errorMaxLines = 2,
         ) {
-            Column(modifier = Modifier.fillMaxSize()) {
+            Column(modifier = Modifier.fillMaxSize().padding(all = 16.dp)) {
                 Column(
                     modifier = Modifier.weight(1f),
                     horizontalAlignment = Alignment.CenterHorizontally,
@@ -61,12 +65,17 @@ fun AuthScreen() {
                     loading = false,
                     onClick = {
                         messageBarState.addError("Not implemented yet")
-                    }
+                    },
                 )
-
             }
-
         }
+    }
+}
 
+@Preview
+@Composable
+private fun AuthScreenPreview() {
+    NutriSportPreview(layout = PreviewLayout.Screen) {
+        AuthScreen()
     }
 }

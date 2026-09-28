@@ -18,11 +18,6 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -34,10 +29,13 @@ import com.compose.nutrisportapp.FontSize.REGULAR
 import com.compose.nutrisportapp.Gray
 import com.compose.nutrisportapp.GrayDarker
 import com.compose.nutrisportapp.IconSecondary
+import com.compose.nutrisportapp.NutriSportPreview
+import com.compose.nutrisportapp.PreviewLayout
 import com.compose.nutrisportapp.Resources
 import com.compose.nutrisportapp.TextPrimary
 import org.jetbrains.compose.resources.DrawableResource
 import org.jetbrains.compose.resources.painterResource
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
 fun GoogleButton(
@@ -50,53 +48,68 @@ fun GoogleButton(
     backgroundColors: Color = Gray,
     borderColors: Color = GrayDarker,
     progressIndicatorColor: Color = IconSecondary,
-    onClick: () -> Unit= {}
+    onClick: () -> Unit = {},
 ) {
-    var buttonText by remember { mutableStateOf(primaryText) }
-    LaunchedEffect(loading) {
-        buttonText = if (loading) secondaryText else primaryText
-    }
+    val buttonText = if (loading) secondaryText else primaryText
 
     Surface(
-        modifier = modifier.clip(shape).border(
-            width = 1.dp,
-            color = borderColors,
-            shape = shape
-        ).clickable(enabled = !loading) { onClick() },
+        modifier = modifier
+            .clip(shape)
+            .border(
+                width = 1.dp,
+                color = borderColors,
+                shape = shape,
+            )
+            .clickable(enabled = !loading, onClick = onClick),
         color = backgroundColors,
-
-        ) {
+    ) {
         Row(
-            modifier = Modifier.fillMaxWidth().padding(20.dp).animateContentSize(
-                animationSpec = tween(durationMillis = 200)
-            ),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(20.dp)
+                .animateContentSize(
+                    animationSpec = tween(durationMillis = 200),
+                ),
             verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.Center
+            horizontalArrangement = Arrangement.Center,
         ) {
-            AnimatedVisibility(visible = !loading){
+            AnimatedVisibility(visible = !loading) {
                 Icon(
                     painter = painterResource(icon),
                     contentDescription = "Google Logo",
-                    tint = Color.Unspecified
+                    tint = Color.Unspecified,
                 )
             }
 
-            AnimatedVisibility(visible = loading){
+            AnimatedVisibility(visible = loading) {
                 CircularProgressIndicator(
-                    modifier= Modifier.size(24.dp),
+                    modifier = Modifier.size(24.dp),
                     strokeWidth = 2.dp,
-                    color = progressIndicatorColor
+                    color = progressIndicatorColor,
                 )
             }
             Spacer(modifier = Modifier.width(12.dp))
             Text(
                 text = buttonText,
                 color = TextPrimary,
-                fontSize = REGULAR
+                fontSize = REGULAR,
             )
-
-
         }
     }
+}
 
+@Preview
+@Composable
+private fun GoogleButtonPreview() {
+    NutriSportPreview(layout = PreviewLayout.Item) {
+        GoogleButton()
+    }
+}
+
+@Preview
+@Composable
+private fun GoogleButtonLoadingPreview() {
+    NutriSportPreview(layout = PreviewLayout.Item) {
+        GoogleButton(loading = true)
+    }
 }
