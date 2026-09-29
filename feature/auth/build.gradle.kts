@@ -5,6 +5,8 @@ plugins {
 kotlin {
     sourceSets.commonMain.dependencies {
         implementation(libs.messagebar.kmp)
+        implementation(libs.auth.kmp)
+        implementation(libs.auth.firebase.kmp)
         implementation(project(":core:designsystem"))
     }
 }

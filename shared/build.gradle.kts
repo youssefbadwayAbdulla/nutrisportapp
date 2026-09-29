@@ -16,6 +16,7 @@ kotlin {
     sourceSets.commonMain.dependencies {
         api(project(":core:designsystem"))
         implementation(project(":navigation"))
+        implementation(libs.auth.kmp)
     }
 }
 
