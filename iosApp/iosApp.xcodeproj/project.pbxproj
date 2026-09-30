@@ -406,15 +406,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E2A78A75306D167500C6AFC8 /* FirebaseAuth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E2A78A74306D167500C6AFC8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAuth;
-		};
 		E2A78A6F306C002E00C6AFC8 /* GoogleSignIn */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E2A78A6E306C002E00C6AFC8 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
 			productName = GoogleSignIn;
+		};
+		E2A78A75306D167500C6AFC8 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E2A78A74306D167500C6AFC8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
