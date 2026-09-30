@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>821742159816-ov54et3v5i51iv85oi35rr0vljo4rj88.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.821742159816-ov54et3v5i51iv85oi35rr0vljo4rj88</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>821742159816-ut2l86jc5auk62qjkj7kap4r8mdfge9d.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAtrovVR0IShcm8P2bmnFRWKZag3koZj_o</string>
+	<key>GCM_SENDER_ID</key>
+	<string>821742159816</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.compose.nutrisportapp.NutriSportApp</string>
+	<key>PROJECT_ID</key>
+	<string>nutrisportapp-ccb5e</string>
+	<key>STORAGE_BUCKET</key>
+	<string>nutrisportapp-ccb5e.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:821742159816:ios:a94048539f422a2d6062fd</string>
+</dict>
+</plist>
