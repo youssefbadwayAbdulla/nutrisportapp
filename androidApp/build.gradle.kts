@@ -5,9 +5,11 @@ plugins {
 
 dependencies {
     implementation(project(":shared"))
+    implementation(project(":di"))
     implementation(libs.androidx.activity.compose)
     implementation(libs.splash.screen)
     implementation(libs.firebase.app)
+    implementation(libs.koin.android)
 }
 
 android {

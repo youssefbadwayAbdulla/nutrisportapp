@@ -25,6 +25,7 @@ internal fun Project.configureKmpComposeLibrary(
         sourceSets.apply {
             getByName("androidMain").dependencies {
                 implementation(libs.library("compose-uiToolingPreview"))
+                implementation(libs.library("koin-android"))
             }
             getByName("commonMain").dependencies {
                 implementation(libs.library("compose-runtime"))
