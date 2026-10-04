@@ -23,8 +23,11 @@ import com.compose.nutrisportapp.BebasNeueFont
 import com.compose.nutrisportapp.FontSize
 import com.compose.nutrisportapp.NutriSportPreview
 import com.compose.nutrisportapp.PreviewLayout
+import com.compose.nutrisportapp.SurfaceBrand
+import com.compose.nutrisportapp.SurfaceError
 import com.compose.nutrisportapp.TextPrimary
 import com.compose.nutrisportapp.TextSecondary
+import com.compose.nutrisportapp.TextWhite
 import com.mmk.kmpauth.firebase.google.GoogleButtonUiContainerFirebase
 import com.nutrisport.auth.component.GoogleButton
 import org.jetbrains.compose.ui.tooling.preview.Preview
@@ -44,6 +47,10 @@ fun AuthScreen() {
             ),
             messageBarState = messageBarState,
             errorMaxLines = 2,
+            errorContainerColor = SurfaceError,
+            errorContentColor = TextWhite,
+            successContainerColor = SurfaceBrand,
+            successContentColor = TextPrimary,
         ) {
             Column(modifier = Modifier.fillMaxSize().padding(all = 16.dp)) {
                 Column(
